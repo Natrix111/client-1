@@ -6,19 +6,33 @@ let app = new Vue({
         altText: "A pair of socks",
         inStock: true,
         details: ['80% cotton', '20% polyester', 'Gender-neutral'],
-        sizes: ['S', 'M', 'L', 'XL', 'XXL', 'XXXL'],
         variants: [
             {
                 variantId: 2234,
-                variantColor: 'green'
+                variantColor: 'green',
+                variantImage: "./assets/vmSocks-green-onWhite.jpg",
             },
             {
                 variantId: 2235,
-                variantColor: 'blue'
+                variantColor: 'blue',
+                variantImage: "./assets/vmSocks-blue-onWhite.jpg",
             }
-        ]
-
+        ],
+        cart: 0,
+    },
+    methods: {
+        addToCart() {
+            this.cart += 1
+        },
+        deleteFromCart() {
+            this.cart -= 1
+        },
+        updateProduct(variantImage) {
+            this.image = variantImage
+        }
     }
+
 })
+
 
 
